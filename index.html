@@ -10,11 +10,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+    <script src="assets/js/main.js" defer></script>
+
     <title>Fruitful Vine Home Care</title>
 </head>
 <body>
     <!-- <HEADER> -->
-    <!-- <header> -->
         <section class="topnav">
             <div class="container">
                 <ul class="contact-and-location">
@@ -37,17 +38,34 @@
             </div>
         </section>
 
-        <nav class="nav">
+        <nav id="navbar" class="nav">
             <div class="container">
-                <div id="logo">Logo</div>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Contact</a></li>
+                <div class="d-flex">
+                    <div id="nav-menu-icon">
+                        <i class="uil uil-bars"></i>
+                    </div>
+                    <p id="logo">Logo</p>
+                </div>
+                <ul class="navlinks">
+                    <li><a href="home" class="active">Home</a></li>
+                    <li><a href="about">About</a></li>
+                    <li><a href="services">Services</a></li>
+                    <li><a href="contact">Contact</a></li>
                 </ul>
+                <div id="topnav-menu-icon">
+                    <i class="uil uil-ellipsis-v"></i>
+                </div>
             </div>
         </nav>
+
+        <!-- END OF HEADER -->
+
+        <div class="mobile-topnav">
+
+        </div>
+        <div class="mobile-nav">
+
+        </div>
 
         <!-- Hero Section -->
         <section class="container hero">
@@ -55,7 +73,7 @@
                 <h1> Welcome to MedCare Clinic</h1>
                 <h2> Cultivating wellness in the comfort of your home</h2>
                 <div class="hero-buttons">
-                <a class="btn btn-yellow-fill" href="#">Learn More</a>
+                <a class="btn btn-turq-fill" href="#">Learn More</a>
                 <a class="btn btn-blue-outline" href="#">Our Services</a>
             </div>
             </div>
@@ -64,11 +82,11 @@
     <!-- </header> -->
     <!-- </HEADER> -->
 
-    <div class="hero-bg-image"></div>
+    <div class="hero-bg-image scaleAnimation"></div>
 
     <section>
         <div class="hero-card">
-            <div>icon</div>
+                <div>icon</div>
             <div>
                 <h3>Qualified Doctors</h3>
                 <hr>
@@ -172,5 +190,6 @@
 
     </footer>
     <!-- </FOOTER> -->
+    <!-- <div id="preloader"></div> -->
 </body>
 </html>

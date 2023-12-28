@@ -2,8 +2,10 @@
     --dark: #2c3b4a;
     --blue: #346bae;
     --yellow: #e1c303; 
+    --turq: #03cee1; 
     --light: #e4ecee;
     /* --yellow: #e1c303;   #00bcd1 */
+    /* --turq: #34a4ae;  */
 }
 
 *{
@@ -54,10 +56,10 @@ nav{
     position: sticky;
     top: 0;
     z-index: 1000;
+    padding: .5rem 0;
 }
 .nav ul{
     display: flex;
-    padding: 1rem 0;
 }
 .nav ul li {
     padding-left: 2.5rem;
@@ -67,16 +69,41 @@ nav{
     font-weight: 800;
     font-size: 1.5rem;
 }
+.topnav ul li i:hover,
+.nav ul li a:hover{
+    color: var(--blue);
+    cursor: pointer;
+}
+nav a.active {
+    color: var(--blue); 
+}
+.nav-scrolled{
+    background-color: var(--blue);
+    padding: 0;
+}
+.nav-scrolled a.active{
+    color: var(--turq);
+}
+.nav-scrolled ul li a:hover{
+    color: var(--turq);
+}
+#topnav-menu-icon,
+#nav-menu-icon{
+    font-size: 2rem;
+    cursor: pointer;
+    display: none;
+}
 .hero{
     padding: 2rem 0;
     margin-bottom: 4.5rem;
+    margin-top: 1rem;
 }
 .hero .content{
     display: flex;
     flex-direction: column;
     gap: 2rem;
     width: 65%;
-    background: #ffffffdb;
+    background: #ffffffae;
     padding: 3rem 4rem;
     border-radius: 1rem;
     color: var(--blue);
@@ -97,7 +124,12 @@ nav{
     position: absolute;
     top: 0;
     z-index: -1;
-    background-color: var(--blue);
+    background: url('../img/hero-img-1.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-attachment: fixed;
+    animation: scaleAnimation 30s infinite alternate; 
 }
 .hero-buttons{
     padding: 1rem 0;
@@ -122,16 +154,16 @@ nav{
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%) scale(0.2);
-    background: var(--dark);
+    background: var(--blue);
     border-radius: 50%;
     opacity: 0;
     z-index: -1;
     transition: all 0.3s linear;
 }
 .btn:hover{
-    background-color: var(--dark);
+    background-color: var(--blue);
     color: var(--light);
-    border: 1px solid var(--dark);
+    border: 1px solid var(--blue);
     font-weight: 400;
 }
 .btn:hover::after{
@@ -144,6 +176,11 @@ nav{
     font-weight: 600;
     border: 1px solid var(--yellow);
 }
+.btn-turq-fill{
+    background: var(--turq);
+    color: white;
+    border: 1px solid var(--turq);
+}
 .btn-dark-fill{
     background: var(--dark);
     color: var(--light);
@@ -153,3 +190,95 @@ nav{
     color: var(--blue);
     border: 1px solid var(--blue);
 }
+
+
+
+
+/* UTILITY CLASSES */
+.d-flex{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+
+
+
+
+/* MEDIA QUERIES */
+
+/* Tablets */
+@media only screen and (min-width: 600px) and (max-width: 767px) {
+    .nav ul{
+        display: none;
+    }
+    .topnav{
+        display: none;
+    }
+}
+
+
+/* Phones */
+@media only screen and (max-width: 599px) {
+    /* Styles for small smartphones */
+}
+
+
+
+
+/* ANIMATIONS */
+
+/*--------------------------------------------------------------
+# Preloader
+--------------------------------------------------------------*/
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    overflow: hidden;
+    background: #fff;
+  }
+  
+  #preloader:before {
+    content: "";
+    position: fixed;
+    top: calc(50% - 30px);
+    left: calc(50% - 30px);
+    border: 6px solid var(--blue);
+    border-top-color: #ecf8f9;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: animate-preloader 1s linear infinite;
+  }
+  
+  @keyframes animate-preloader {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* MOVING HERO BG IMAGE */
+
+  .scaling-bg{
+    /* position: fixed; */
+    height: 100%;
+    width: 100%;
+  }
+  
+  @keyframes scaleAnimation {
+    0% {
+        background-size: 100%;
+    }
+    100% {
+        background-size: 120%; /* Adjust the scaling factor as needed */
+    }
+}
+ 
