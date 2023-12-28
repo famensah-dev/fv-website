@@ -63,11 +63,11 @@ header{
     margin-right: .5rem;
 }
 
-nav{
+.nav{
     position: sticky;
     top: 0;
-    z-index: 1000;
-    border: 2px solid red;
+    z-index: 2;
+    /* border: 2px solid red; */
 }
 
 .nav ul{
@@ -85,9 +85,13 @@ nav{
     font-size: 1.5rem;
 }
 .hero{
-    padding: 1.5rem 0;
+    padding: 12rem 0;
+    background-color: var(--blue);
+    position: absolute;
+    top: 0;
+    z-index: -10;
 }
-.hero .content{
+.hero-content{
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -162,4 +166,7 @@ nav{
     border: 1px solid var(--blue);
     color: var(--blue);
     border: 1px solid var(--blue);
+}
+main{
+    margin-top: 80vh;
 }
